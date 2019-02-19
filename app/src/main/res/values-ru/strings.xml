@@ -1,1 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
 
+    <!--MAIN ACTIVITY-->
+    <string name="translate_from_label">Перевести с</string>
+    <string name="translate_to_label">Перевести на</string>
+    <string name="spinner_detect_language">Любого языка (определить)</string>
+    <string name="spinner_english">Английского</string>
+    <string name="spinner_russian">Русского</string>
+    <string name="spinner_german">Немецкого</string>
+    <string name="spinner_french">Французского</string>
+    <string name="spinner_spanish">Испанского</string>
+    <string name="spinner_italian">Итальянского</string>
+    <string name="spinner_dutch">Немецкого</string>
+    <string name="spinner_polish">Польского</string>
+    <string name="detected_language_label">(detected)</string>
+    <string name="to_translate_hint">Введите или вставьте текст здесь.\n(английский, русский, французский, немецкий, испанский, итальянский, немецкий, польский)</string>
+    <string name="copied_to_clipboard_text">Текст скопирован в буфер обмена</string>
+    <string name="alternatives_label">Варианты :</string>
+    <string name="snack_bar_retry_label">Ошибка сети</string>
+    <string name="snack_bar_retry_button">Повторить попытку</string>
+    <string name="speech_to_text_hint">Произнести</string>
+    <string name="speech_to_text_error">Эта функция не поддерживается на вашем устройстве.</string>
+    <string name="volume_off_label">Звук выключен</string>
+
+    <!--BUTTON DESCRIPTIONS-->
+    <string name="clear_to_translate_button_description">Очистить</string>
+    <string name="copy_to_clipboard_button_description">Копировать в буфер обмена</string>
+    <string name="invert_languages_button_description">Обратный перевод</string>
+    <string name="speech_to_text_description">Speak to translate</string>
+    <string name="text_to_speech_description">Прослушать перевод</string>
+    <string name="paste_description">Вставить</string>
+
+</resources>

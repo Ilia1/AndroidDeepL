@@ -25,12 +25,13 @@ object LanguageManager {
     const val ITALIAN = "IT"
     const val DUTCH = "NL"
     const val POLISH = "PL"
+    const val RUSSIAN = "RU"
 
     private const val LANGUAGE_SHARED_PREFERENCES = "deepl_language_manager"
     private const val LAST_TRANSLATE_FROM_PREFERENCES_KEY = "last_translate_from"
     private const val LAST_TRANSLATE_TO_PREFERENCES_KEY = "last_translate_to"
 
-    @StringDef(AUTO, ENGLISH, GERMAN, FRENCH, SPANISH, ITALIAN, DUTCH, POLISH)
+    @StringDef(AUTO, ENGLISH, GERMAN, FRENCH, SPANISH, ITALIAN, DUTCH, POLISH, RUSSIAN)
     @Retention(RetentionPolicy.SOURCE)
     annotation class Language
 
@@ -43,6 +44,7 @@ object LanguageManager {
             ITALIAN -> R.string.spinner_italian
             DUTCH -> R.string.spinner_dutch
             POLISH -> R.string.spinner_polish
+            RUSSIAN -> R.string.spinner_russian
             else -> R.string.spinner_detect_language
         }
 
@@ -51,7 +53,7 @@ object LanguageManager {
 
     @Language
     fun getLanguageValue(languageString: String, context: Context): String {
-        val languagesList = Arrays.asList(AUTO, ENGLISH, GERMAN, FRENCH, SPANISH, ITALIAN, DUTCH, POLISH)
+        val languagesList = Arrays.asList(AUTO, ENGLISH, GERMAN, FRENCH, SPANISH, ITALIAN, DUTCH, POLISH, RUSSIAN)
         languagesList.forEach {
             if (languageString == getLanguageString(it, context)) {
                 return it
@@ -67,6 +69,7 @@ object LanguageManager {
             FRENCH -> Locale.FRENCH
             SPANISH -> Locale("es")
             ITALIAN -> Locale.ITALIAN
+            RUSSIAN -> Locale.RUSSIAN
             DUTCH -> {
                 var locale = Locale("nl")
                 if (textToSpeech == null || textToSpeech.isLanguageAvailable(locale) == TextToSpeech.LANG_AVAILABLE) {
@@ -99,7 +102,7 @@ object LanguageManager {
 
     fun getLanguagesStringArray(context: Context, @Language languageToRemove: String?, addAuto: Boolean): Array<String> {
         // We use a LinkedList because Arrays.asList return a fixed size list, not allowing item removal
-        val languagesList = LinkedList(Arrays.asList(AUTO, ENGLISH, GERMAN, FRENCH, SPANISH, ITALIAN, DUTCH, POLISH))
+        val languagesList = LinkedList(Arrays.asList(AUTO, ENGLISH, GERMAN, FRENCH, SPANISH, ITALIAN, DUTCH, POLISH, RUSSIAN))
         val languagesStringList = ArrayList<String>()
         if (languageToRemove != null) {
             languagesList.remove(languageToRemove)
